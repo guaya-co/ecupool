@@ -1,0 +1,13 @@
+[package]
+name = "db"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[dependencies]
+eyre.workspace = true
+serde.workspace = true
+snafu.workspace = true
+sqlx.workspace = true
+uuid.workspace = true
