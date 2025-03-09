@@ -1,11 +1,12 @@
 [package]
-name = "db"
+name = "ecupool-db"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
 publish.workspace = true
 
 [dependencies]
+ecupool-config = { path = "../config" }
 eyre.workspace = true
 serde.workspace = true
 snafu.workspace = true

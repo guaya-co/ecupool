@@ -33,23 +33,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923"
 
 [[package]]
-name = "api"
-version = "0.1.0"
-dependencies = [
- "axum",
- "eyre",
- "serde",
- "serde_json",
- "snafu",
- "tokio",
- "tower-http",
- "tracing",
- "tracing-panic",
- "tracing-subscriber",
- "uuid",
-]
-
-[[package]]
 name = "atoi"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -201,17 +184,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "config"
-version = "0.1.0"
-dependencies = [
- "dotenvy",
- "eyre",
- "serde",
- "serde_json",
- "tracing",
-]
-
-[[package]]
 name = "const-oid"
 version = "0.9.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -267,17 +239,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "db"
-version = "0.1.0"
-dependencies = [
- "eyre",
- "serde",
- "snafu",
- "sqlx",
- "uuid",
-]
-
-[[package]]
 name = "der"
 version = "0.7.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -316,6 +277,48 @@ name = "dotenvy"
 version = "0.15.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1aaf95b3e5c8f23aa320147307562d361db0ae0d51242340f558153b4eb2439b"
+
+[[package]]
+name = "ecupool-api"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "ecupool-config",
+ "ecupool-db",
+ "eyre",
+ "serde",
+ "serde_json",
+ "snafu",
+ "tokio",
+ "tower-http",
+ "tracing",
+ "tracing-panic",
+ "tracing-subscriber",
+ "uuid",
+]
+
+[[package]]
+name = "ecupool-config"
+version = "0.1.0"
+dependencies = [
+ "dotenvy",
+ "eyre",
+ "serde",
+ "serde_json",
+ "tracing",
+]
+
+[[package]]
+name = "ecupool-db"
+version = "0.1.0"
+dependencies = [
+ "ecupool-config",
+ "eyre",
+ "serde",
+ "snafu",
+ "sqlx",
+ "uuid",
+]
 
 [[package]]
 name = "either"

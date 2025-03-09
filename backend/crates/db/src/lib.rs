@@ -1,14 +1,14 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+use ecupool_config::DatabaseConfig;
+use eyre::WrapErr;
+pub use sqlx::postgres::PgPool as DbPool;
+use sqlx::postgres::PgPoolOptions;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub async fn connect_pool(config: DatabaseConfig) -> eyre::Result<DbPool> {
+    // TODO: fix this
+    let pool = PgPoolOptions::new()
+        .connect(config.url.as_str())
+        .await
+        .wrap_err("Failed to connect to database")?;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+    Ok(pool)
 }
